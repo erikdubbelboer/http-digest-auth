@@ -1,0 +1,20 @@
+{
+   "name":        "http-digest-auth",
+   "version":     "0.1.0",
+   "main":        "http-digest-auth",
+   "description": "Functions to perform http digest authentication",
+   "homepage":    "http://github.com/ErikDubbelboer/http-digest-auth",
+   "author":      "Erik Dubbelboer <erik@dubbelboer.com>",
+   "engines" : { "node" : ">=0.4.0" },
+   "keywords": [
+       "http",
+       "digest",
+       "auth"
+   ],
+   "repositories": [
+       {
+           "type": "git",
+           "url":  "https://github.com/ErikDubbelboer/http-digest-auth.git"
+       }
+   ]
+}

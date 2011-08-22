@@ -72,7 +72,7 @@ function auth401(req, res, realm, opaque, message) {
 
 
 exports.login = function(req, res, realm, users) {
-  var opaque = md5(realm+req.headers['user-agent']+req.remoteAddress);
+  var opaque = md5(realm+req.headers['user-agent']+req.connection.remoteAddress);
 
   // Check if the headers are present.
   if (!req.headers.authorization) {
@@ -144,7 +144,7 @@ exports.logout = function(req) {
     return false;
   }
 
-  var opaque = md5(parts.realm+req.headers['user-agent']+req.remoteAddress);
+  var opaque = md5(parts.realm+req.headers['user-agent']+req.connection.remoteAddress);
 
   clearTimeout(nonces[opaque].timer);
 

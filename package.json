@@ -1,6 +1,6 @@
 {
    "name":        "http-digest-auth",
-   "version":     "0.1.1",
+   "version":     "0.1.2",
    "main":        "http-digest-auth",
    "description": "Functions to perform http digest authentication",
    "homepage":    "http://github.com/ErikDubbelboer/http-digest-auth",

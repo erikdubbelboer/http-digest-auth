@@ -106,7 +106,11 @@ exports.login = function(req, res, realm, users) {
   }
 
   // Make sure the requested url is actually the url we are authenticating.
-  if (parts.uri != req.url) {
+  var p = parts.uri.lastIndexOf(req.url);
+
+  // Some browsers add the host and port, others don't, so check both.
+  // Don't just check for the substring but actually make sure the whole end matches.
+  if ((p == -1) || ((p + req.url.length) != parts.uri.length)) {
     auth401(req, res, realm, opaque, 'Invalid uri.');
     return false;
   }

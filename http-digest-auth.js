@@ -49,6 +49,11 @@ function getparts(req) {
 
 
 function auth401(req, res, realm, opaque, message) {
+  // If we already have a timer for this opaque clear it.
+  if (nonces[opaque]) {
+    clearTimeout(nonces[opaque].timer);
+  }
+
   var nonce = new Date().getTime();
 
   // The session times out after one hour.

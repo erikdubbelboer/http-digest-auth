@@ -21,7 +21,6 @@ function getparts(req) {
     'nonce':    null,
     'uri':      null,
     'response': null,
-    'opaque':   null,
     'qop':      null,
     'nc':       null,
     'cnonce':   null
